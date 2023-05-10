@@ -27,4 +27,21 @@ public class tablaEnterosPrueba {
         int suma = tabla.sumaTabla();
         Assert.assertEquals(15, suma);
     }
+
+    @Test
+    public void mayorTablaDebeRetornarElMayorElemento() {
+        int mayor = tabla.mayorTabla();
+        Assert.assertEquals(5, mayor);
+    }
+
+    @Test
+    public void posicionTablaDebeRetornarLaPosicionCorrecta() {
+        int posicion = tabla.posicionTabla(3);
+        Assert.assertEquals(2, posicion);
+    }
+
+    @Test(expected = java.util.NoSuchElementException.class)
+    public void posicionTablaConElementoNoExistenteLanzaExcepcion() {
+        tabla.posicionTabla(6);
+    }
 }
